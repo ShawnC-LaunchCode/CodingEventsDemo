@@ -19,7 +19,6 @@ namespace coding_events_practice.Controllers
         public IActionResult Index()
         {
             ViewBag.events = EventData.GetAll();
-
             return View();
         }
 
@@ -36,6 +35,13 @@ namespace coding_events_practice.Controllers
             
 
             return Redirect("/Events");
+        }
+
+
+        public IActionResult Delete()
+        {
+            ViewBag.events = EventData.GetAll();
+            return View();
         }
     }
 }
