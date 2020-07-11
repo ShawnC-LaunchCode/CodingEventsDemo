@@ -43,5 +43,18 @@ namespace coding_events_practice.Controllers
             ViewBag.events = EventData.GetAll();
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Delete(int[] eventIds)
+        {
+            foreach(int i in eventIds)
+            {
+                EventData.Remove(i);
+            }
+            
+            
+            return Redirect("/Events");
+        }
+
     }
 }
