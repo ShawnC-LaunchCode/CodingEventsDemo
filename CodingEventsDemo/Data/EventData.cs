@@ -39,5 +39,11 @@ namespace CodingEventsDemo.Data
             Events.Remove(Id);
         }
 
+        public static void Edit(int id, string name, string desc)
+        {
+            Events.Remove(id);
+            Events.Add(id, new Event(name, desc));
+        }
+
     }
 }
